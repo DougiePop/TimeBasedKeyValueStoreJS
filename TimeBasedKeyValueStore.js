@@ -33,10 +33,9 @@ const compareTo = (pos1, pos2) => {
  * @return {void}
  */
 TimeMap.prototype.set = function(key, value, timestamp) {
-    let length = this.map[key].length;
-
     if(!this.map[key]) this.map[key] = [];
 
+    // Using ES6 Property value shorthand for objects
     this.map[key].push({
         value,
         timestamp,
@@ -51,11 +50,12 @@ TimeMap.prototype.binarySearch = function(arr, targetTimeStamp, start, end, best
     const currTimeStamp = arr[mid].timestamp;
     const currValue = arr[mid].value;
 
-    // base case
+    // worst base case
     if (start > end) {
         return bestValue;
     } 
 
+    // best base case
     // if this.map[key] contains the targetTimeStamp, return value at current index
     if (currTimeStamp === targetTimeStamp) {
         return currValue;
