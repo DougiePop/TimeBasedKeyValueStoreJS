@@ -51,14 +51,14 @@ TimeMap.prototype.set = function(key, value, timestamp) {
 
 // binary search method using recursion on sorted array
 TimeMap.prototype.binarySearch = function(arr, targetTimeStamp, start, end, bestValue) {
-    const mid = Math.floor((start + end) / 2);
-    const currTimeStamp = arr[mid].timestamp;
-    const currValue = arr[mid].value;
-
     // worst base case
     if (start > end) {
         return bestValue;
     } 
+
+    const mid = Math.floor((start + end) / 2);
+    const currTimeStamp = arr[mid].timestamp;
+    const currValue = arr[mid].value;
 
     // best base case
     // if this.map[key] contains the targetTimeStamp, return value at current index
