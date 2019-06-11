@@ -41,6 +41,11 @@ TimeMap.prototype.set = function(key, value, timestamp) {
         timestamp,
     })
 
+    // NOTE: in order for this to pass on leetcode using their test cases, it assumes that
+    // the values are sorted according to its timestamp
+    // therefore, you might need to remove this line in order to have it accepted
+    // however, I didn't see the timestamps being sorted which is necessary to use binary search
+    // so I included this sort method
     this.map[key].sort(compareTo)
 }
 
